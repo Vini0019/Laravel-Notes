@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'https://stunning-halibut-x55xxwr6465pc9qv-8000.app.github.dev'),
 
     /*
     |--------------------------------------------------------------------------
