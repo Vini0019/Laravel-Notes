@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\loginRequest;
 use Illuminate\Http\Request;
 
 class AuthController extends Controller
@@ -11,11 +12,10 @@ class AuthController extends Controller
         return view('login');
     }
 
-    public function loginSubmit(Request $request)
+    public function loginSubmit(loginRequest $request)
     {
-        return view ('login', [
-            'request' => $request
-        ]);
+
+        dd($request->all());
     }
 
     public function logout()
