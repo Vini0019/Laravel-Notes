@@ -1,66 +1,162 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<h1 align="center">📝 Laravel Notes</h1>
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  Um app simples de anotações feito com <strong>Laravel</strong>, <strong>PHP</strong>, <strong>Blade</strong>, <strong>Bootstrap</strong> e <strong>MySQL</strong>.
 </p>
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## ✨ Sobre o Projeto
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<div align="justify">
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+O <strong>Laravel Notes</strong> é uma aplicação web simples para criação, edição e organização de anotações pessoais. Seu foco é ser leve, intuitivo e funcional, permitindo que o usuário gerencie suas notas de forma rápida, segura e eficiente.
 
-## Learning Laravel
+</div>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Visual do projeto
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 🔐 Tela de Login
 
-## Laravel Sponsors
+<p align="center">
+  <img src="https://i.imgur.com/05F7mxi.png" alt="Tela de Login" width="700">
+</p>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+### 🏠 Tela Inicial / Dashboard
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+<p align="center">
+  <img src="https://i.imgur.com/4dEIoB5.png" alt="Dashboard" width="700">
+</p>
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### ✍️ Criar Nova Nota
 
-## Code of Conduct
+<p align="center">
+  <img src="https://i.imgur.com/D27dFIv.png" alt="Nova Nota" width="700">
+</p>
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+### 🛠️ Editar Nota
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+<p align="center">
+  <img src="https://i.imgur.com/aVMQPJZ.png" alt="Editar Nota" width="700">
+</p>
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### ❌ Confirmar Exclusão
+
+<p align="center">
+  <img src="https://i.imgur.com/4qSy125.png" alt="Confirmar Exclusão" width="700">
+</p>
+
+---
+
+## 🧠 Backend
+
+### 🔐 Autenticação
+
+<div align="justify">
+
+A aplicação utiliza o sistema de autenticação nativo do Laravel, com suporte a `login` e `logout`. Um middleware `auth` protege as rotas privadas, garantindo que apenas usuários autenticados possam acessar, criar, editar ou excluir notas.
+
+</div>
+
+---
+
+### 📦 Models e Eloquent ORM
+
+<div align="justify">
+
+As interações com o banco de dados são feitas por meio do **Eloquent ORM**, o que permite trabalhar com tabelas como se fossem objetos PHP. O modelo `Note` representa as notas do usuário, enquanto o modelo `User` lida com a autenticação e associação com as notas.
+
+- Cada nota pertence a um único usuário (relação `hasMany` / `belongsTo`)
+- As operações de `create`, `update` e `delete` são feitas de forma simples e segura com Eloquent
+
+</div>
+
+---
+
+### 📂 Controllers
+
+<div align="justify">
+
+O `NoteController` centraliza toda a lógica das notas. Ele contém os métodos para:
+
+- `index()` – Listar todas as notas do usuário autenticado  
+- `create()` e `store()` – Exibir o formulário de nova nota e salvá-la  
+- `edit()` e `update()` – Exibir o formulário de edição e atualizar a nota  
+- `destroy()` – Excluir uma nota após confirmação
+
+</div>
+
+---
+
+### 🌐 Rotas
+
+<div align="justify">
+
+As rotas estão organizadas no arquivo `web.php` e protegidas por middleware `auth`. Algumas das principais rotas são:
+
+- `/` → Redireciona para o dashboard do usuário  
+- `/notes` → Lista todas as notas  
+- `/notes/create` → Formulário para criar uma nova nota  
+- `/notes/{id}/edit` → Formulário para editar uma nota existente  
+- `/notes/{id}` → Exclusão de uma nota com método `DELETE`
+
+</div>
+
+---
+
+### 💾 Banco de Dados
+
+<div align="justify">
+
+O projeto utiliza **MySQL** como banco de dados relacional. As principais tabelas envolvidas são:
+
+- `users`: armazena dados dos usuários (nome, email, senha)  
+- `notes`: contém as anotações criadas, vinculadas ao usuário via `user_id`
+
+As migrations do Laravel foram usadas para criar e versionar a estrutura do banco de forma segura e rastreável.
+
+</div>
+
+---
+
+## 🚀 Funcionalidades
+
+<ul>
+  <li>✅ Login seguro de usuário</li>
+  <li>📝 Criação de novas notas</li>
+  <li>🔁 Edição rápida e prática</li>
+  <li>🗑️ Exclusão com confirmação</li>
+  <li>📄 Visualização clara e objetiva</li>
+  <li>📱 Layout responsivo com Bootstrap</li>
+</ul>
+
+---
+
+## 🧑‍💻 Tecnologias Utilizadas
+
+<div align="center">
+
+| Backend  | Frontend  | Banco de Dados |
+|----------|-----------|----------------|
+| PHP      | HTML5     | MySQL          |
+| Laravel  | CSS3      |                |
+| Blade    | Bootstrap |                |
+|          | JavaScript|                |
+
+</div>
+
+---
+
+<p align="center">
+  Feito com 💙 usando Laravel
+</p>
